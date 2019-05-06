@@ -12,7 +12,7 @@
     firebase.initializeApp(config);
     firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION);
     
-    // Get elements
+    // Get elements from html
     const txtFirstName = document.getElementById('txtFirstName');
     const txtLastName = document.getElementById('txtLastName');
     const txtAffiliation = document.getElementById('txtAffiliation');
@@ -24,29 +24,12 @@
     
     // Add signup event
     btnRegister.addEventListener('click', e => {
-        // Get email and password (pass)
-        // TODO: Check for real email
-        const firstName = txtFirstName.value;
-        const lastName = txtLastName.value;
-        const affiliation = txtAffiliation.value;
-        const email = txtEmail.value;
-        const pass = txtPassword.value;
-        
-        if(firstName && lastName && affiliation && email && pass)
+        if(txtFirstName.value && txtLastName.value 
+           && txtAffiliation.value && txtEmail.value && txtPassword.value)
         {
             // Register and sign in
-            firebase.auth().createUserWithEmailAndPassword(email, pass).then(function(){
-                // Email not already used, create account
-                const userId = firebase.auth().currentUser.uid.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
-                console.log(userId);
-                // Add to database
-                firebase.database().ref(userId).set({
-                    first_name: firstName,
-                    last_name: lastName,
-                    affiliation: affiliation,
-                    email: email
-                });
-            }).catch(function(error){
+            firebase.auth().createUserWithEmailAndPassword(txtEmail.value, txtPassword.value)
+            .catch(function(error){
                 // Email already used
                 window.alert('Email already registered')
             });
@@ -60,8 +43,19 @@
     // Active auth state observer
     firebase.auth().onAuthStateChanged(function(user) {
         if(user){
-            // Go to main page
-            window.location = ('index-firebase.html');
+            // Email not already used, create account
+            const userId = firebase.auth().currentUser.uid.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
+            // Add to database
+            firebase.database().ref(userId).set({
+                first_name: txtFirstName.value,
+                last_name: txtLastName.value,
+                affiliation: txtAffiliation.value,
+                email: txtEmail.value
+            });
+            console.log('databaseupdated')
+            setTimeout(function(){
+                window.location.replace('index-firebase.html');
+            }, 500);
         } else {
             console.log('not logged in')
         }
