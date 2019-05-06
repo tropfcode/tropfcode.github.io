@@ -66,6 +66,20 @@
   margin: 5px;
 }
 
+.horizontal-btn-container
+{
+  color: white;
+  font-size: 200%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.horizontal-btns
+{
+  margin: 5px;
+}
+
 .container-btns
 {
   color: white;
@@ -79,6 +93,23 @@
 .container-btns button
 {
   margin: 5px;
+}
+
+.container-logout
+{
+  color: white;
+  font-size: 200%;
+  background-color: #004C98; /*Blue*/
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.container-logout-item
+{
+  margin: 20px;
 }
 
 .conference-text-box
