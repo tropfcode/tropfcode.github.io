@@ -9,23 +9,16 @@
   </head>
   <body>
       
-    <!--Testing access to database with logged in user delete this-->
-    <div id=p1>p1</div>
-    <div id=p2>p2</div>
+    <!--User information and logout button-->
+    <div class='container-logout'>
+        <div id='txtEmail' class='container-logout-item'> </div>
+        <div id='txtName' class='container-logout-item'> </div>
+        <button id='btnLogout' class='container-logout-item'>Log Out</button>
+    </div>
       
     <!--CFMIP picture-->
     <div class='cfmip-pic-box'>
         <img src='images/cfmip.png'/>
-        <button id='btnLogout'>
-          Log Out
-        </button>
-        <button id='btnLogin' class='hide'>
-          Log in
-      </button>
-        
-      <button id='btnSignUp' class='hide'>
-          Sign Up
-      </button>
     </div>
     <!--Informative text about conference, date, time, etc.-->
     <div class='conference-text-box'>
@@ -37,8 +30,6 @@
     <div class='important-dates-box'>
       <h2 class='large'>Registration Fee</h2>
       <!--<div class='important-dates-list'>-->
-        <p><br>IMPORTANT: Please note that to register you must first create an account and Log In to
-complete your registration<br></p>
         <p><br></p>
         <ul class='medium'>
           <li>Early registration: € 310 (ends on June 30, 2019)</li>
