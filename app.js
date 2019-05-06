@@ -31,35 +31,17 @@
     
     // Add signup event
     btnSignUp.addEventListener('click', e => {
-        // Get email and password (pass)
-        // TODO: Check for real email
-        //const email = txtEmail.value;
-        //const pass = txtPassword.value;
-        //const auth = firebase.auth();
-        // Sign in
-        //const promise = auth.createUserWithEmailAndPassword(email, pass);
-        //promise.catch(e => console.log(e.message));
         window.location.href = 'signup.html'
     });
-    
-    // Add logout event
-    btnLogout.addEventListener('click', e => {
-        firebase.auth().signOut();
-        window.location.href = 'login.html'
-    })
     
     // Add a realtime listener
     firebase.auth().onAuthStateChanged(firebaseUser => {
         if(firebaseUser){
             console.log(firebaseUser);
             if (firebaseUser){
-                console.log('what')
                 window.location.href = 'index-firebase.html'
             }
         } else {
-           // if(window.location=='index-firebase.html'){
-           //     window.location = 'signup-login.html'
-            //}
             console.log('not logged in');
         }
     });
