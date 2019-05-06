@@ -43,14 +43,6 @@
   color: white;
 }
 
-.cfmip-pic-box
-{
-  display: flex;
-  padding: 20px 0;
-  justify-content: center;
-  background-color: white;
-}
-
 .container
 {
   color: white;
@@ -110,6 +102,14 @@
 .container-logout-item
 {
   margin: 20px;
+}
+
+.cfmip-pic-box
+{
+  display: flex;
+  padding: 20px 0;
+  justify-content: center;
+  background-color: white;
 }
 
 .conference-text-box
