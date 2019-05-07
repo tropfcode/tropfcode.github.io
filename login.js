@@ -37,7 +37,7 @@
         if(firebaseUser){
             console.log(firebaseUser);
             if (firebaseUser){
-                window.location.replace('index-firebase.html');
+                window.location.replace('index.html');
             }
         } else {
             console.log('not logged in');
