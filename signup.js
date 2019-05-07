@@ -54,7 +54,7 @@
             });
             console.log('databaseupdated')
             setTimeout(function(){
-                window.location.replace('index-firebase.html');
+                window.location.replace('index.html');
             }, 500);
         } else {
             console.log('not logged in')
