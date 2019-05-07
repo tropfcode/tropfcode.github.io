@@ -35,10 +35,7 @@
     // Add a realtime listener
     firebase.auth().onAuthStateChanged(firebaseUser => {
         if(firebaseUser){
-            console.log(firebaseUser);
-            if (firebaseUser){
-                window.location.replace('index.html');
-            }
+            window.location.replace('index.html');
         } else {
             console.log('not logged in');
         }
