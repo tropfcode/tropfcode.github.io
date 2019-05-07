@@ -26,12 +26,10 @@
         const pass = txtPassword.value;
         const auth = firebase.auth();
         // Sign in
-        const promise = firebase.auth().signInWithEmailAndPassword(email, pass);
-    });
-    
-    // Add signup event
-    btnSignUp.addEventListener('click', e => {
-        window.location.href = 'signup.html'
+        firebase.auth().signInWithEmailAndPassword(email, pass).catch(function(error) {
+           // Sign in error
+           window.alert('Incorrect email or password')
+        });
     });
     
     // Add a realtime listener
@@ -39,7 +37,7 @@
         if(firebaseUser){
             console.log(firebaseUser);
             if (firebaseUser){
-                window.location.href = 'index-firebase.html'
+                window.location.replace('index-firebase.html');
             }
         } else {
             console.log('not logged in');
