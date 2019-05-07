@@ -15,6 +15,7 @@
     // Get html elements
     const txtEmail = document.getElementById('txtEmail');
     const txtName = document.getElementById('txtName');
+    const txtAffiliation = document.getElementById('txtAffiliation');
     
     // Active auth state observer
     firebase.auth().onAuthStateChanged(function(user) {
@@ -25,8 +26,10 @@
                 var firstName = snapshot.val().first_name;
                 var lastName = snapshot.val().last_name;
                 var email = snapshot.val().email;
+                var affiliation = snapshot.val().affiliation;
                 txtEmail.innerHTML = email;
                 txtName.innerHTML = firstName + " " + lastName;
+                txtAffiliation.innerHTML = affiliation;
             });
         } else {
             console.log('LOGGED OUT');
