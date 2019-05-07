@@ -15,9 +15,50 @@
   font-size: 150%;
 }
 
+.button-style {
+color: #494949 !important;
+text-transform: uppercase;
+background: #ffffff;
+padding: 5px;
+border: 2px solid #494949 !important;
+border-radius: 6px;
+display: inline-block;
+width: 100px;
+}
+
+.button-style:hover {
+color: #ffffff !important;
+background: #004C98;
+border-color: #ffffff !important;
+transition: all 0.4s ease 0s;
+}
+
 .large
 {
   font-size: 200%;
+}
+
+a:link {
+  color: #004C98;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: pink;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.blue
+{
+  color: #004C98;
 }
 
 .menu-box
@@ -41,6 +82,14 @@
 {
   text-decoration: none;
   color: white;
+}
+
+.cfmip-pic-box
+{
+  display: flex;
+  padding: 20px 0;
+  justify-content: center;
+  background-color: white;
 }
 
 .container
@@ -102,14 +151,6 @@
 .container-logout-item
 {
   margin: 20px;
-}
-
-.cfmip-pic-box
-{
-  display: flex;
-  padding: 20px 0;
-  justify-content: center;
-  background-color: white;
 }
 
 .conference-text-box
