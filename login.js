@@ -19,7 +19,7 @@
     const btnSignUp = document.getElementById('btnSignUp');
     const btnLogout = document.getElementById('btnLogout');
     
-    // Add login event
+    // Add login button event
     btnLogin.addEventListener('click', e => {
         // Get email and password (pass)
         const email = txtEmail.value;
@@ -32,10 +32,18 @@
         });
     });
     
+    // Add signup button event
+    btnSignUp.addEventListener('click', e => {
+        window.location.href = 'signup.html';
+    });
+    
     // Add a realtime listener
     firebase.auth().onAuthStateChanged(firebaseUser => {
         if(firebaseUser){
-            window.location.replace('index.html');
+            console.log(firebaseUser);
+            if (firebaseUser){
+                window.location.replace('index.html');
+            }
         } else {
             console.log('not logged in');
         }
