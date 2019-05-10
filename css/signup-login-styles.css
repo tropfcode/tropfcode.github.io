@@ -33,7 +33,26 @@ width: 100px;
 height: 100px;
 }
 
+.button-style-reg{
+color: #494949 !important;
+text-transform: uppercase;
+background: #ffffff;
+padding: 5px;
+border: 2px solid #494949 !important;
+border-radius: 6px;
+display: inline-block;
+width: 200px;
+height: 100px;
+}
+
 .button-style:hover {
+color: #ffffff !important;
+background: #004C98;
+border-color: #ffffff !important;
+transition: all 0.4s ease 0s;
+}
+
+.button-style-reg:hover {
 color: #ffffff !important;
 background: #004C98;
 border-color: #ffffff !important;
