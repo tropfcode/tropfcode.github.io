@@ -43,4 +43,10 @@
         firebase.auth().signOut();
     })
     
+    // Registration button
+    const btnRegister = document.getElementById('btnRegister');
+    btnRegister.addEventListener('click', e => {
+        console.log('Testing registration button');
+    })
+    
 }());
